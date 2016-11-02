@@ -1876,10 +1876,12 @@ Licensed under the BSD-2-Clause License.
       if (this.el === null || this.el.length === 0) {
         throw new Error("Graph placeholder not found.");
       }
+      this.raphael = new Raphael(this.el[0]);
+      
       if (options.data === void 0 || options.data.length === 0) {
         return;
       }
-      this.raphael = new Raphael(this.el[0]);
+ 
       if (this.options.resize) {
         $(window).bind('resize', function(evt) {
           if (_this.timeoutId != null) {
