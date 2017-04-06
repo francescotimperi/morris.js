@@ -942,7 +942,14 @@ Licensed under the BSD-2-Clause License.
     Line.prototype.hoverContentForRow = function(index) {
       var content, j, row, y, _i, _len, _ref;
       row = this.data[index];
-      content = $("<div class='morris-hover-row-label'>").text(row.label);
+
+      if(row){
+           content = $("<div class='morris-hover-row-label'>").text(row.label);
+      }else{
+           content = $("<div class='morris-hover-row-label'>");
+      }
+
+     
       content = content.prop('outerHTML');
       _ref = row.y;
       for (j = _i = 0, _len = _ref.length; _i < _len; j = ++_i) {
